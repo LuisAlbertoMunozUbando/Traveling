@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Viaje por China - 12 a 23 de Octubre 2026 | Shanghái, Suzhou, Guangzhou, Shenzhen, Hong Kong, Hangzhou">
+    <title>Viaje China 2026 - 6 Ciudades + NVIDIA Showcase</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #76b900;
+            --primary-light: #91d400;
+            --secondary: #1a1a2e;
+            --accent: #ff6b35;
+            --dark: #1a1a1a;
+            --light: #f5f5f5;
+            --white: #ffffff;
+            --gray: #888888;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, var(--light) 0%, #e8e8e8 100%);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* HEADER */
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            animation: slideDown 0.8s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header h1 {
+            font-size: 3.5em;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        .header .subtitle {
+            font-size: 1.3em;
+            color: var(--gray);
+            margin-bottom: 5px;
+        }
+
+        .header .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1em;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .stat-icon {
+            font-size: 1.5em;
+        }
+
+        /* GRID DE CIUDADES */
+        .cities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .city-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: pointer;
+        }
+
+        .city-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .city-card.nvidia-event {
+            border: 3px solid var(--primary);
+            position: relative;
+        }
+
+        .nvidia-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 700;
+            z-index: 10;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .city-image-container {
+            width: 100%;
+            height: 260px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        svg.city-map {
+            width: 100%;
+            height: 100%;
+        }
+
+        .city-card:nth-child(1) .city-image-container {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .city-card:nth-child(2) .city-image-container {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+        }
+
+        .city-card:nth-child(3) .city-image-container {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .city-card:nth-child(4) .city-image-container {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+
+        .city-card:nth-child(5) .city-image-container {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+
+        .city-card:nth-child(6) .city-image-container {
+            background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+        }
+
+        .city-info {
+            padding: 30px;
+        }
+
+        .city-header {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .city-name {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .city-emoji {
+            font-size: 1.6em;
+        }
+
+        .city-dates {
+            font-size: 0.9em;
+            color: var(--gray);
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .city-section {
+            margin-bottom: 18px;
+        }
+
+        .city-section-title {
+            font-size: 0.85em;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .city-section-content {
+            font-size: 0.95em;
+            line-height: 1.6;
+            color: var(--dark);
+        }
+
+        .city-section-content strong {
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        .city-hotel {
+            background: linear-gradient(135deg, rgba(118, 185, 0, 0.05) 0%, rgba(145, 212, 0, 0.05) 100%);
+            padding: 12px 15px;
+            border-radius: 8px;
+            border-left: 3px solid var(--primary);
+            margin-top: 15px;
+            font-size: 0.9em;
+        }
+
+        .city-hotel-name {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .nvidia-event-box {
+            background: linear-gradient(135deg, rgba(118, 185, 0, 0.15) 0%, rgba(145, 212, 0, 0.1) 100%);
+            border: 2px solid var(--primary);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .nvidia-event-title {
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+
+        .nvidia-event-details {
+            font-size: 0.9em;
+            color: var(--dark);
+            line-height: 1.5;
+        }
+
+        /* MAPA GLOBAL */
+        .global-map-section {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            margin-bottom: 60px;
+            overflow: hidden;
+        }
+
+        .global-map-section h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: var(--dark);
+        }
+
+        #globalMap {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            background: #f0f0f0;
+        }
+
+        /* RESUMEN DE RUTA */
+        .route-summary {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            margin-bottom: 60px;
+        }
+
+        .route-summary h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: var(--dark);
+        }
+
+        .route-list {
+            display: grid;
+            gap: 20px;
+        }
+
+        .route-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 15px;
+            background: var(--light);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .route-item.nvidia {
+            background: linear-gradient(135deg, rgba(118, 185, 0, 0.1) 0%, rgba(145, 212, 0, 0.05) 100%);
+            border-left-color: var(--primary);
+        }
+
+        .route-item:hover {
+            background: #efefef;
+        }
+
+        .route-icon {
+            font-size: 2em;
+            min-width: 50px;
+            text-align: center;
+        }
+
+        .route-info {
+            flex: 1;
+        }
+
+        .route-name {
+            font-weight: 700;
+            font-size: 1.1em;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+
+        .route-details {
+            font-size: 0.9em;
+            color: var(--gray);
+        }
+
+        /* INFO IMPORTANTE */
+        .important-info {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 60px;
+        }
+
+        .important-info h2 {
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .info-item {
+            display: flex;
+            gap: 15px;
+        }
+
+        .info-icon {
+            font-size: 1.8em;
+            min-width: 50px;
+        }
+
+        .info-item h3 {
+            font-size: 1.1em;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .info-item p {
+            font-size: 0.95em;
+            opacity: 0.95;
+            line-height: 1.5;
+        }
+
+        /* FOOTER */
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: var(--gray);
+            border-top: 1px solid #e0e0e0;
+            margin-top: 60px;
+        }
+
+        .footer p {
+            font-size: 0.95em;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5em;
+            }
+
+            .header .stats {
+                gap: 20px;
+            }
+
+            .city-info {
+                padding: 20px;
+            }
+
+            .city-name {
+                font-size: 1.4em;
+            }
+
+            .route-summary {
+                padding: 25px;
+            }
+
+            .important-info {
+                padding: 25px;
+            }
+        }
+
+        /* PRINT STYLES */
+        @media print {
+            body {
+                background: var(--white);
+            }
+
+            .city-card,
+            .route-summary,
+            .important-info,
+            .global-map-section {
+                page-break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #e0e0e0;
+            }
+
+            .city-card {
+                margin-bottom: 20px;
+            }
+        }
+    
+        .live-map { display:block; width:100%; height:100%; border:0; background:#e8f4f8; }
+        .global-map-section > .live-map { height:480px; border:1px solid #ddd; border-radius:12px; }
+        .map-note { color:#555; margin:0 0 16px; }
+        .map-links { margin:0 0 20px; }
+        .map-links a,.city-map-nav a { color:#365c00; font-weight:600; text-decoration:underline; }
+        .map-links span { display:block; font-size:.78em; color:#666; margin-top:6px; }
+        .city-map-nav { display:flex; flex-wrap:wrap; gap:12px 24px; margin:-30px 0 30px; }
+        .city-card { cursor:default; }
+        .city-card:hover { transform:none; }
+        .nvidia-badge { pointer-events:none; }
+        @media (max-width:400px) { .cities-grid { grid-template-columns:1fr; } }
+        @media (max-width:768px) { .global-map-section > .live-map { height:360px; } }
+        @media print { .live-map { display:none; } .city-image-container { display:none; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- ENCABEZADO -->
+        <div class="header">
+            <h1>🌏 Viaje China 2026</h1>
+            <p class="subtitle">Recorrido por ciudades de innovación + NVIDIA Startup Showcase</p>
+            <div class="stats">
+                <div class="stat">
+                    <span class="stat-icon">📅</span>
+                    <span>12-23 Octubre</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-icon">🏙️</span>
+                    <span>6 Ciudades</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-icon">📍</span>
+                    <span>~2,500 km</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-icon">⏱️</span>
+                    <span>12 Días</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- MAPA GLOBAL -->
+        <div class="global-map-section">
+            <h2>🗺️ Mapa de las ciudades - Viaje China 2026</h2>
+<p class="map-note">Vista geográfica general. Selecciona una ciudad para ver su ubicación; el orden del recorrido aparece debajo.</p>
+            <iframe class="live-map" title="Mapa de las ciudades del viaje" src="https://www.openstreetmap.org/export/embed.html?bbox=110.5%2C20.5%2C123.2%2C33.3&amp;layer=mapnik" loading="eager" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            <p style="font-size: 0.9em; color: var(--gray); margin-top: 15px;">
+                <strong>Ruta:</strong> Shanghái → Suzhou (NVIDIA) → Guangzhou → Shenzhen → Hong Kong → Hangzhou
+                <br><strong>Distancia total:</strong> ~2,500 km | <strong>Transporte:</strong> 2 Vuelos + 1 Tren + 1 Traslado
+            </p>
+        </div>
+
+        <nav class="city-map-nav" aria-label="Mapas de ciudades"><a href="https://www.openstreetmap.org/?mlat=31.2304&amp;mlon=121.4737#map=12/31.2304/121.4737" target="_blank" rel="noopener noreferrer">Shanghái</a> <a href="https://www.openstreetmap.org/?mlat=31.2989&amp;mlon=120.5853#map=12/31.2989/120.5853" target="_blank" rel="noopener noreferrer">Suzhou</a> <a href="https://www.openstreetmap.org/?mlat=23.1291&amp;mlon=113.2644#map=12/23.1291/113.2644" target="_blank" rel="noopener noreferrer">Guangzhou</a> <a href="https://www.openstreetmap.org/?mlat=22.5431&amp;mlon=114.0579#map=12/22.5431/114.0579" target="_blank" rel="noopener noreferrer">Shenzhen</a> <a href="https://www.openstreetmap.org/?mlat=22.3193&amp;mlon=114.1694#map=12/22.3193/114.1694" target="_blank" rel="noopener noreferrer">Hong Kong</a> <a href="https://www.openstreetmap.org/?mlat=30.2741&amp;mlon=120.1551#map=12/30.2741/120.1551" target="_blank" rel="noopener noreferrer">Hangzhou</a></nav>
+<!-- TARJETAS DE CIUDADES -->
+        <div class="cities-grid">
+            <!-- SHANGHÁI -->
+            <div class="city-card">
+                <div class="city-image-container">
+                    <iframe class="live-map" title="Mapa de Shanghái" src="https://www.openstreetmap.org/export/embed.html?bbox=121.3337%2C31.1354%2C121.6137%2C31.3254&amp;layer=mapnik&amp;marker=31.2304%2C121.4737" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+                <div class="city-info">
+                    <div class="city-header">
+                        <span class="city-emoji">🏙️</span>
+                        <span class="city-name">Shanghái</span>
+                    </div>
+                    <div class="city-dates">📅 12-15 Octubre (4 días)</div>
+<div class="map-links"><a href="https://www.openstreetmap.org/?mlat=31.2304&amp;mlon=121.4737#map=12/31.2304/121.4737" target="_blank" rel="noopener noreferrer">🗺️ Abrir mapa de Shanghái</a><span>Marcador del centro de la ciudad; no del hotel o recinto.</span></div>
+
+                    <div class="city-section">
+                        <div class="city-section-title">Actividad Principal</div>
+                        <div class="city-section-content">
+                            <strong>CIIF 2026 - Robot Show</strong><br>
+                            Asistencia desde 9:00 AM (14 oct)
+                        </div>
+                    </div>
+
+                    <div class="city-section">
+                        <div class="city-section-title">Itinerario</div>
+                        <div class="city-section-content">
+                            ✈️ Llegada aéreo (12 oct)<br>
+                            📍 Día de llegada y preparación (13 oct)
+                        </div>
+                    </div>
+
+                    <div class="city-hotel">
+                        <div class="city-hotel-name">🏨 Aloft Shanghai Hongqiao</div>
+                        <div style="font-size: 0.85em; margin-top: 4px; opacity: 0.9;">Hotel de conferencia</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SUZHOU - NVIDIA EVENT -->
+            <div class="city-card nvidia-event">
+                <div class="nvidia-badge">🎯 NVIDIA EVENT</div>
+                <div class="city-image-container">
+                    <iframe class="live-map" title="Mapa de Suzhou" src="https://www.openstreetmap.org/export/embed.html?bbox=120.4453%2C31.2039%2C120.7253%2C31.3939&amp;layer=mapnik&amp;marker=31.2989%2C120.5853" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+                <div class="city-info">
+                    <div class="city-header">
+                        <span class="city-emoji">⭐</span>
+                        <span class="city-name">Suzhou</span>
+                    </div>
+                    <div class="city-dates">📅 15 Octubre (1 día)</div>
+<div class="map-links"><a href="https://www.openstreetmap.org/?mlat=31.2989&amp;mlon=120.5853#map=12/31.2989/120.5853" target="_blank" rel="noopener noreferrer">🗺️ Abrir mapa de Suzhou</a><span>Marcador del centro de la ciudad; no del hotel o recinto.</span></div>
+
+                    <div class="city-section">
+                        <div class="city-section-title">Actividad Principal</div>
+                        <div class="city-section-content">
+                            <strong>NVIDIA 2026 Startup Showcase</strong><br>
+                            Semi-final round
+                        </div>
+                    </div>
+
+                    <div class="city-section">
+                        <div class="city-section-title">Transporte</div>
+                        <div class="city-section-content">
+                            🚄 Tren desde Shanghái<br>
+                            📍 ~100 km | 30 minutos
+                        </div>
+                    </div>
+
+                    <div class="nvidia-event-box">
+                        <div class="nvidia-event-title">📍 NVIDIA Startup Showcase</div>
+                        <div class="nvidia-event-details">
+                            <strong>Hora:</strong> 9:30 - 18:00 CST<br>
+                            <strong>Lugar:</strong> Suzhou Golden Rooster Lake International Conference Center, Building A<br>
+                            <strong>Evento:</strong> 2026 Startup Enterprise Showcase<br>
+                            <strong>Roadshow:</strong> AI Agents o Physical AI<br>
+                            <strong>Status:</strong> Pendiente aprobación de registro
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GUANGZHOU -->
+            <div class="city-card">
+                <div class="city-image-container">
+                    <iframe class="live-map" title="Mapa de Guangzhou" src="https://www.openstreetmap.org/export/embed.html?bbox=113.1244%2C23.034100000000002%2C113.4044%2C23.2241&amp;layer=mapnik&amp;marker=23.1291%2C113.2644" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+                <div class="city-info">
+                    <div class="city-header">
+                        <span class="city-emoji">🌃</span>
+                        <span class="city-name">Guangzhou</span>
+                    </div>
+                    <div class="city-dates">📅 15-18 Octubre (3 días)</div>
+<div class="map-links"><a href="https://www.openstreetmap.org/?mlat=23.1291&amp;mlon=113.2644#map=12/23.1291/113.2644" target="_blank" rel="noopener noreferrer">🗺️ Abrir mapa de Guangzhou</a><span>Marcador del centro de la ciudad; no del hotel o recinto.</span></div>
+
+                    <div class="city-section">
+                        <div class="city-section-title">Actividad Principal</div>
+                        <div class="city-section-content">
+                            <strong>Canton Fair</strong><br>
+                            Inicio 16 oct | Último día 18 oct (hasta 5:00 PM)
+                        </div>
+                    </div>
+
+                    <div class="city-section">
+                        <div class="city-section-title">Transporte</div>
+                        <div class="city-section-content">
+                            ✈️ Vuelo desde Shanghái<br>
+                            📍 ~1,200 km | 2.5 horas
+                        </div>
+                    </div>
+
+                    <div class="city-hotel">
+                        <div class="city-hotel-name">🏨 Fairfield Guangzhou Tianhe Park</div>
+                        <div style="font-size: 0.85em; margin-top: 4px; opacity: 0.9;">Ubicación central cerca de feria</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SHENZHEN -->
+            <div class="city-card">
+                <div class="city-image-container">
+                    <iframe class="live-map" title="Mapa de Shenzhen" src="https://www.openstreetmap.org/export/embed.html?bbox=113.9179%2C22.4481%2C114.1979%2C22.638099999999998&amp;layer=mapnik&amp;marker=22.5431%2C114.0579" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+                <div class="city-info">
+                    <div class="city-header">
+                        <span class="city-emoji">🏢</span>
+                        <span class="city-name">Shenzhen</span>
+                    </div>
+                    <div class="city-dates">📅 18-20 Octubre (2 días)</div>
+<div class="map-links"><a href="https://www.openstreetmap.org/?mlat=22.5431&amp;mlon=114.0579#map=12/22.5431/114.0579" target="_blank" rel="noopener noreferrer">🗺️ Abrir mapa de Shenzhen</a><span>Marcador del centro de la ciudad; no del hotel o recinto.</span></div>
+
+                    <div class="city-section">
+                        <div class="city-section-title">Actividad Principal</div>
+                        <div class="city-section-content">
+                            <strong>Amigos de IROS</strong><br>
+                            Cámaras y Robots
+                        </div>
+                    </div>
+
+                    <div class="city-section">
+                        <div class="city-section-title">Transporte</div>
+                        <div class="city-section-content">
+                            🚆 Tren desde Guangzhou<br>
+                            📍 ~180 km | 2.5 horas
+                        </div>
+                    </div>
+
+                    <div class="city-hotel">
+                        <div class="city-hotel-name">🏨 Hotel (por confirmar)</div>
+                        <div style="font-size: 0.85em; margin-top: 4px; opacity: 0.9;">Comprobante no disponible</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HONG KONG -->
+            <div class="city-card">
+                <div class="city-image-container">
+                    <iframe class="live-map" title="Mapa de Hong Kong" src="https://www.openstreetmap.org/export/embed.html?bbox=114.0294%2C22.2243%2C114.3094%2C22.414299999999997&amp;layer=mapnik&amp;marker=22.3193%2C114.1694" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+                <div class="city-info">
+                    <div class="city-header">
+                        <span class="city-emoji">🇭🇰</span>
+                        <span class="city-name">Hong Kong</span>
+                    </div>
+                    <div class="city-dates">📅 20-21 Octubre (1-2 días)</div>
+<div class="map-links"><a href="https://www.openstreetmap.org/?mlat=22.3193&amp;mlon=114.1694#map=12/22.3193/114.1694" target="_blank" rel="noopener noreferrer">🗺️ Abrir mapa de Hong Kong</a><span>Marcador del centro de la ciudad; no del hotel o recinto.</span></div>
+
+                    <div class="city-section">
+                        <div class="city-section-title">Actividades</div>
+                        <div class="city-section-content">
+                            ⚖️ Reunión con abogado (mañana)<br>
+                            🍽️ Cena con Roy Deng
+                        </div>
+                    </div>
+
+                    <div class="city-section">
+                        <div class="city-section-title">Transporte</div>
+                        <div class="city-section-content">
+                            🚐 Traslado desde Shenzhen<br>
+                            📍 ~40 km | 1 hora
+                        </div>
+                    </div>
+
+                    <div class="city-hotel">
+                        <div class="city-hotel-name">🏨 Hotel (por confirmar)</div>
+                        <div style="font-size: 0.85em; margin-top: 4px; opacity: 0.9;">Comprobante no disponible</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HANGZHOU -->
+            <div class="city-card">
+                <div class="city-image-container">
+                    <iframe class="live-map" title="Mapa de Hangzhou" src="https://www.openstreetmap.org/export/embed.html?bbox=120.0151%2C30.179100000000002%2C120.2951%2C30.3691&amp;layer=mapnik&amp;marker=30.2741%2C120.1551" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+                <div class="city-info">
+                    <div class="city-header">
+                        <span class="city-emoji">🏯</span>
+                        <span class="city-name">Hangzhou</span>
+                    </div>
+                    <div class="city-dates">📅 21-23 Octubre (3 días)</div>
+<div class="map-links"><a href="https://www.openstreetmap.org/?mlat=30.2741&amp;mlon=120.1551#map=12/30.2741/120.1551" target="_blank" rel="noopener noreferrer">🗺️ Abrir mapa de Hangzhou</a><span>Marcador del centro de la ciudad; no del hotel o recinto.</span></div>
+
+                    <div class="city-section">
+                        <div class="city-section-title">Actividad Principal</div>
+                        <div class="city-section-content">
+                            <strong>Global Distributor Conference</strong><br>
+                            Unitree Robotics
+                        </div>
+                    </div>
+
+                    <div class="city-section">
+                        <div class="city-section-title">Transporte</div>
+                        <div class="city-section-content">
+                            ✈️ Vuelo desde Hong Kong<br>
+                            📍 ~1,000 km | 2 horas
+                        </div>
+                    </div>
+
+                    <div class="city-hotel">
+                        <div class="city-hotel-name">🏨 The Azure Qiantang</div>
+                        <div style="font-size: 0.85em; margin-top: 4px; opacity: 0.9;">Salida 23 oct 5:00 PM</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RESUMEN DE RUTA -->
+        <div class="route-summary">
+            <h2>📍 Cronología Completa del Viaje</h2>
+            <div class="route-list">
+                <div class="route-item">
+                    <div class="route-icon">✈️</div>
+                    <div class="route-info">
+                        <div class="route-name">Lunes 12 Oct: Llegada a Shanghái</div>
+                        <div class="route-details">Vuelo internacional → Aloft Shanghai Hongqiao</div>
+                    </div>
+                </div>
+                <div class="route-item">
+                    <div class="route-icon">🤖</div>
+                    <div class="route-info">
+                        <div class="route-name">Martes 14 Oct: CIIF 2026 - Robot Show</div>
+                        <div class="route-details">Shanghái | Asistencia desde 9:00 AM</div>
+                    </div>
+                </div>
+                <div class="route-item nvidia">
+                    <div class="route-icon">🎯</div>
+                    <div class="route-info">
+                        <div class="route-name">Miércoles 15 Oct: NVIDIA Startup Showcase</div>
+                        <div class="route-details">Suzhou | 9:30-18:00 CST | Golden Rooster Lake Conference Center</div>
+                    </div>
+                </div>
+                <div class="route-item nvidia">
+                    <div class="route-icon">✈️</div>
+                    <div class="route-info">
+                        <div class="route-name">Miércoles 15 Oct (tarde): Shanghái → Guangzhou</div>
+                        <div class="route-details">1,200 km | Vuelo 2.5h | Fairfield Guangzhou</div>
+                    </div>
+                </div>
+                <div class="route-item">
+                    <div class="route-icon">🎪</div>
+                    <div class="route-info">
+                        <div class="route-name">Jueves 16 Oct - Sábado 18 Oct: Canton Fair</div>
+                        <div class="route-details">Guangzhou | Feria comercial internacional</div>
+                    </div>
+                </div>
+                <div class="route-item">
+                    <div class="route-icon">🚆</div>
+                    <div class="route-info">
+                        <div class="route-name">Domingo 18 Oct: Guangzhou → Shenzhen</div>
+                        <div class="route-details">180 km | Tren 2.5h | Hotel a confirmar</div>
+                    </div>
+                </div>
+                <div class="route-item">
+                    <div class="route-icon">📸</div>
+                    <div class="route-info">
+                        <div class="route-name">Lunes 19 Oct - Martes 20 Oct: Amigos de IROS</div>
+                        <div class="route-details">Shenzhen | Cámaras y Robots</div>
+                    </div>
+                </div>
+                <div class="route-item">
+                    <div class="route-icon">🚐</div>
+                    <div class="route-info">
+                        <div class="route-name">Martes 20 Oct: Shenzhen → Hong Kong</div>
+                        <div class="route-details">40 km | Transporte 1h | Hotel a confirmar</div>
+                    </div>
+                </div>
+                <div class="route-item">
+                    <div class="route-icon">⚖️</div>
+                    <div class="route-info">
+                        <div class="route-name">Miércoles 21 Oct (mañana): Reunión con abogado</div>
+                        <div class="route-details">Hong Kong</div>
+                    </div>
+                </div>
+                <div class="route-item">
+                    <div class="route-icon">✈️</div>
+                    <div class="route-info">
+                        <div class="route-name">Miércoles 21 Oct (tarde): Hong Kong → Hangzhou</div>
+                        <div class="route-details">1,000 km | Vuelo 2h | The Azure Qiantang</div>
+                    </div>
+                </div>
+                <div class="route-item">
+                    <div class="route-icon">🤝</div>
+                    <div class="route-info">
+                        <div class="route-name">Jueves 22 Oct - Viernes 23 Oct: Global Distributor Conference</div>
+                        <div class="route-details">Hangzhou | Unitree Robotics</div>
+                    </div>
+                </div>
+                <div class="route-item">
+                    <div class="route-icon">🏠</div>
+                    <div class="route-info">
+                        <div class="route-name">Viernes 23 Oct: Regreso a casa</div>
+                        <div class="route-details">Salida desde The Azure Qiantang 5:00 PM</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- INFORMACIÓN IMPORTANTE -->
+        <div class="important-info">
+            <h2>⚠️ Información Importante</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-icon">🎯</div>
+                    <div>
+                        <h3>NVIDIA Showcase</h3>
+                        <p>Evento principal el 15 oct en Suzhou. Registro en aprobación. Roadshow recomendado: AI Agents o Physical AI.</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">📋</div>
+                    <div>
+                        <h3>Documentación</h3>
+                        <p>Verifica visas y documentación con anticipación. China requiere visa para la mayoría de nacionalidades.</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">🏨</div>
+                    <div>
+                        <h3>Hoteles Pendientes</h3>
+                        <p>Shenzhen y Hong Kong requieren confirmación de reserva. Contacta para obtener comprobantes.</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">🎫</div>
+                    <div>
+                        <h3>Transporte</h3>
+                        <p>Reserva vuelos y trenes con anticipación. Los viajes de alta velocidad son rápidos y económicos.</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">💳</div>
+                    <div>
+                        <h3>Moneda y Pagos</h3>
+                        <p>Cambiar a Yuan Chino (CNY). WeChat Pay y Alipay son métodos de pago principales en China.</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">📱</div>
+                    <div>
+                        <h3>Conectividad</h3>
+                        <p>Considera un VPN para acceder a servicios internacionales. Data internacional o SIM local recomendada.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Viaje China 2026 + NVIDIA Startup Showcase | Itinerario de 12-23 Octubre | 6 Ciudades Principales</p>
+        <p style="margin-top: 10px; font-size: 0.85em;">Mapas © OpenStreetMap contributors • Los mapas requieren conexión a Internet • Si un mapa no carga, utiliza “Abrir mapa”.</p>
+    </div>
+
+    <script>
+        // Animación de cards al cargar
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.city-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.transition = 'all 0.6s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+
+        // Agregar funcionalidad de impresión amigable
+        function printPage() {
+            window.print();
+        }
+    </script>
+</body>
+</html>
