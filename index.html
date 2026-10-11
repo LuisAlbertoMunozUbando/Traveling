@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Viaje por China - 12 a 23 de Octubre 2026 | Shanghái, Suzhou, Guangzhou, Shenzhen, Hong Kong, Hangzhou">
-    <title>Viaje China 2026 - 6 Ciudades + NVIDIA Showcase</title>
+    <meta name="description" content="China trip, October 12–23, 2026 | Shanghai, Suzhou, Guangzhou, Shenzhen, Hong Kong, Hangzhou">
+    <title>China Trip 2026 - 6 Cities + NVIDIA Showcase</title>
     <style>
         * {
             margin: 0;
@@ -98,7 +98,7 @@
             font-size: 1.5em;
         }
 
-        /* GRID DE CIUDADES */
+        /* CITY GRID */
         .cities-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -266,7 +266,7 @@
             line-height: 1.5;
         }
 
-        /* MAPA GLOBAL */
+        /* OVERVIEW MAP */
         .global-map-section {
             background: var(--white);
             border-radius: 16px;
@@ -290,7 +290,7 @@
             background: #f0f0f0;
         }
 
-        /* RESUMEN DE RUTA */
+        /* ROUTE SUMMARY */
         .route-summary {
             background: var(--white);
             border-radius: 16px;
@@ -352,7 +352,7 @@
             color: var(--gray);
         }
 
-        /* INFO IMPORTANTE */
+        /* IMPORTANT INFORMATION */
         .important-info {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
             color: var(--white);
@@ -472,18 +472,18 @@
 </head>
 <body>
     <div class="container">
-        <!-- ENCABEZADO -->
+        <!-- HEADER -->
         <div class="header">
-            <h1>🌏 Viaje China 2026</h1>
-            <p class="subtitle">Recorrido por ciudades de innovación + NVIDIA Startup Showcase</p>
+            <h1>🌏 China Trip 2026</h1>
+            <p class="subtitle">A tour of innovation hubs + NVIDIA Startup Showcase</p>
             <div class="stats">
                 <div class="stat">
                     <span class="stat-icon">📅</span>
-                    <span>12-23 Octubre</span>
+                    <span>October 12–23</span>
                 </div>
                 <div class="stat">
                     <span class="stat-icon">🏙️</span>
-                    <span>6 Ciudades</span>
+                    <span>6 Cities</span>
                 </div>
                 <div class="stat">
                     <span class="stat-icon">📍</span>
@@ -491,57 +491,57 @@
                 </div>
                 <div class="stat">
                     <span class="stat-icon">⏱️</span>
-                    <span>12 Días</span>
+                    <span>12 Days</span>
                 </div>
             </div>
         </div>
 
         <!-- MAPA GLOBAL -->
         <div class="global-map-section">
-            <h2>🗺️ Mapa de las ciudades - Viaje China 2026</h2>
-<p class="map-note">Vista geográfica general. Selecciona una ciudad para ver su ubicación; el orden del recorrido aparece debajo.</p>
-            <iframe class="live-map" title="Mapa de las ciudades del viaje" src="https://www.openstreetmap.org/export/embed.html?bbox=110.5%2C20.5%2C123.2%2C33.3&amp;layer=mapnik" loading="eager" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            <h2>🗺️ City Map - China Trip 2026</h2>
+<p class="map-note">Geographic overview. Select a city to view its location; the route order appears below.</p>
+            <iframe class="live-map" title="Map of the trip’s cities" src="https://www.openstreetmap.org/export/embed.html?bbox=110.5%2C20.5%2C123.2%2C33.3&amp;layer=mapnik" loading="eager" referrerpolicy="strict-origin-when-cross-origin"></iframe>
             <p style="font-size: 0.9em; color: var(--gray); margin-top: 15px;">
-                <strong>Ruta:</strong> Shanghái → Suzhou (NVIDIA) → Guangzhou → Shenzhen → Hong Kong → Hangzhou
-                <br><strong>Distancia total:</strong> ~2,500 km | <strong>Transporte:</strong> 2 Vuelos + 1 Tren + 1 Traslado
+                <strong>Route:</strong> Shanghai → Suzhou (NVIDIA) → Guangzhou → Shenzhen → Hong Kong → Hangzhou
+                <br><strong>Total distance:</strong> ~2,500 km | <strong>Transport:</strong> 2 flights + 1 train + 1 transfer
             </p>
         </div>
 
-        <nav class="city-map-nav" aria-label="Mapas de ciudades"><a href="https://www.openstreetmap.org/?mlat=31.2304&amp;mlon=121.4737#map=12/31.2304/121.4737" target="_blank" rel="noopener noreferrer">Shanghái</a> <a href="https://www.openstreetmap.org/?mlat=31.2989&amp;mlon=120.5853#map=12/31.2989/120.5853" target="_blank" rel="noopener noreferrer">Suzhou</a> <a href="https://www.openstreetmap.org/?mlat=23.1291&amp;mlon=113.2644#map=12/23.1291/113.2644" target="_blank" rel="noopener noreferrer">Guangzhou</a> <a href="https://www.openstreetmap.org/?mlat=22.5431&amp;mlon=114.0579#map=12/22.5431/114.0579" target="_blank" rel="noopener noreferrer">Shenzhen</a> <a href="https://www.openstreetmap.org/?mlat=22.3193&amp;mlon=114.1694#map=12/22.3193/114.1694" target="_blank" rel="noopener noreferrer">Hong Kong</a> <a href="https://www.openstreetmap.org/?mlat=30.2741&amp;mlon=120.1551#map=12/30.2741/120.1551" target="_blank" rel="noopener noreferrer">Hangzhou</a></nav>
-<!-- TARJETAS DE CIUDADES -->
+        <nav class="city-map-nav" aria-label="City maps"><a href="https://www.openstreetmap.org/?mlat=31.2304&amp;mlon=121.4737#map=12/31.2304/121.4737" target="_blank" rel="noopener noreferrer">Shanghai</a> <a href="https://www.openstreetmap.org/?mlat=31.2989&amp;mlon=120.5853#map=12/31.2989/120.5853" target="_blank" rel="noopener noreferrer">Suzhou</a> <a href="https://www.openstreetmap.org/?mlat=23.1291&amp;mlon=113.2644#map=12/23.1291/113.2644" target="_blank" rel="noopener noreferrer">Guangzhou</a> <a href="https://www.openstreetmap.org/?mlat=22.5431&amp;mlon=114.0579#map=12/22.5431/114.0579" target="_blank" rel="noopener noreferrer">Shenzhen</a> <a href="https://www.openstreetmap.org/?mlat=22.3193&amp;mlon=114.1694#map=12/22.3193/114.1694" target="_blank" rel="noopener noreferrer">Hong Kong</a> <a href="https://www.openstreetmap.org/?mlat=30.2741&amp;mlon=120.1551#map=12/30.2741/120.1551" target="_blank" rel="noopener noreferrer">Hangzhou</a></nav>
+<!-- CITY CARDS -->
         <div class="cities-grid">
-            <!-- SHANGHÁI -->
+            <!-- SHANGHAI -->
             <div class="city-card">
                 <div class="city-image-container">
-                    <iframe class="live-map" title="Mapa de Shanghái" src="https://www.openstreetmap.org/export/embed.html?bbox=121.3337%2C31.1354%2C121.6137%2C31.3254&amp;layer=mapnik&amp;marker=31.2304%2C121.4737" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                    <iframe class="live-map" title="Map of Shanghai" src="https://www.openstreetmap.org/export/embed.html?bbox=121.3337%2C31.1354%2C121.6137%2C31.3254&amp;layer=mapnik&amp;marker=31.2304%2C121.4737" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
                 </div>
                 <div class="city-info">
                     <div class="city-header">
                         <span class="city-emoji">🏙️</span>
-                        <span class="city-name">Shanghái</span>
+                        <span class="city-name">Shanghai</span>
                     </div>
-                    <div class="city-dates">📅 12-15 Octubre (4 días)</div>
-<div class="map-links"><a href="https://www.openstreetmap.org/?mlat=31.2304&amp;mlon=121.4737#map=12/31.2304/121.4737" target="_blank" rel="noopener noreferrer">🗺️ Abrir mapa de Shanghái</a><span>Marcador del centro de la ciudad; no del hotel o recinto.</span></div>
+                    <div class="city-dates">📅 October 12–15 (4 days)</div>
+<div class="map-links"><a href="https://www.openstreetmap.org/?mlat=31.2304&amp;mlon=121.4737#map=12/31.2304/121.4737" target="_blank" rel="noopener noreferrer">🗺️ Open Shanghai map</a><span>City-center marker; not the hotel or venue.</span></div>
 
                     <div class="city-section">
-                        <div class="city-section-title">Actividad Principal</div>
+                        <div class="city-section-title">Main Activity</div>
                         <div class="city-section-content">
                             <strong>CIIF 2026 - Robot Show</strong><br>
-                            Asistencia desde 9:00 AM (14 oct)
+                            Attendance from 9:00 AM (October 14)
                         </div>
                     </div>
 
                     <div class="city-section">
-                        <div class="city-section-title">Itinerario</div>
+                        <div class="city-section-title">Itinerary</div>
                         <div class="city-section-content">
-                            ✈️ Llegada aéreo (12 oct)<br>
-                            📍 Día de llegada y preparación (13 oct)
+                            ✈️ Arrival by air (October 12)<br>
+                            📍 Arrival and preparation day (October 13)
                         </div>
                     </div>
 
                     <div class="city-hotel">
                         <div class="city-hotel-name">🏨 Aloft Shanghai Hongqiao</div>
-                        <div style="font-size: 0.85em; margin-top: 4px; opacity: 0.9;">Hotel de conferencia</div>
+                        <div style="font-size: 0.85em; margin-top: 4px; opacity: 0.9;">Conference hotel</div>
                     </div>
                 </div>
             </div>
@@ -557,21 +557,21 @@
                         <span class="city-emoji">⭐</span>
                         <span class="city-name">Suzhou</span>
                     </div>
-                    <div class="city-dates">📅 15 Octubre (1 día)</div>
-<div class="map-links"><a href="https://www.openstreetmap.org/?mlat=31.2989&amp;mlon=120.5853#map=12/31.2989/120.5853" target="_blank" rel="noopener noreferrer">🗺️ Abrir mapa de Suzhou</a><span>Marcador del centro de la ciudad; no del hotel o recinto.</span></div>
+                    <div class="city-dates">📅 October 15 (1 day)</div>
+<div class="map-links"><a href="https://www.openstreetmap.org/?mlat=31.2989&amp;mlon=120.5853#map=12/31.2989/120.5853" target="_blank" rel="noopener noreferrer">🗺️ Open Suzhou map</a><span>City-center marker; not the hotel or venue.</span></div>
 
                     <div class="city-section">
-                        <div class="city-section-title">Actividad Principal</div>
+                        <div class="city-section-title">Main Activity</div>
                         <div class="city-section-content">
                             <strong>NVIDIA 2026 Startup Showcase</strong><br>
-                            Semi-final round
+                            Semifinal round
                         </div>
                     </div>
 
                     <div class="city-section">
-                        <div class="city-section-title">Transporte</div>
+                        <div class="city-section-title">Transport</div>
                         <div class="city-section-content">
-                            🚄 Tren desde Shanghái<br>
+                            🚄 Train from Shanghai<br>
                             📍 ~100 km | 30 minutos
                         </div>
                     </div>
@@ -579,11 +579,11 @@
                     <div class="nvidia-event-box">
                         <div class="nvidia-event-title">📍 NVIDIA Startup Showcase</div>
                         <div class="nvidia-event-details">
-                            <strong>Hora:</strong> 9:30 - 18:00 CST<br>
-                            <strong>Lugar:</strong> Suzhou Golden Rooster Lake International Conference Center, Building A<br>
-                            <strong>Evento:</strong> 2026 Startup Enterprise Showcase<br>
-                            <strong>Roadshow:</strong> AI Agents o Physical AI<br>
-                            <strong>Status:</strong> Pendiente aprobación de registro
+                            <strong>Time:</strong> 9:30 AM–6:00 PM CST<br>
+                            <strong>Venue:</strong> Suzhou Golden Rooster Lake International Conference Center, Building A<br>
+                            <strong>Event:</strong> 2026 Startup Enterprise Showcase<br>
+                            <strong>Pitch track:</strong> AI Agents or Physical AI<br>
+                            <strong>Status:</strong> Registration approval pending
                         </div>
                     </div>
                 </div>
@@ -599,28 +599,28 @@
                         <span class="city-emoji">🌃</span>
                         <span class="city-name">Guangzhou</span>
                     </div>
-                    <div class="city-dates">📅 15-18 Octubre (3 días)</div>
-<div class="map-links"><a href="https://www.openstreetmap.org/?mlat=23.1291&amp;mlon=113.2644#map=12/23.1291/113.2644" target="_blank" rel="noopener noreferrer">🗺️ Abrir mapa de Guangzhou</a><span>Marcador del centro de la ciudad; no del hotel o recinto.</span></div>
+                    <div class="city-dates">📅 October 15–18 (3 days)</div>
+<div class="map-links"><a href="https://www.openstreetmap.org/?mlat=23.1291&amp;mlon=113.2644#map=12/23.1291/113.2644" target="_blank" rel="noopener noreferrer">🗺️ Open Guangzhou map</a><span>City-center marker; not the hotel or venue.</span></div>
 
                     <div class="city-section">
-                        <div class="city-section-title">Actividad Principal</div>
+                        <div class="city-section-title">Main Activity</div>
                         <div class="city-section-content">
                             <strong>Canton Fair</strong><br>
-                            Inicio 16 oct | Último día 18 oct (hasta 5:00 PM)
+                            Starts October 16 | Last day October 18 (until 5:00 PM)
                         </div>
                     </div>
 
                     <div class="city-section">
-                        <div class="city-section-title">Transporte</div>
+                        <div class="city-section-title">Transport</div>
                         <div class="city-section-content">
-                            ✈️ Vuelo desde Shanghái<br>
+                            ✈️ Flight from Shanghai<br>
                             📍 ~1,200 km | 2.5 horas
                         </div>
                     </div>
 
                     <div class="city-hotel">
                         <div class="city-hotel-name">🏨 Fairfield Guangzhou Tianhe Park</div>
-                        <div style="font-size: 0.85em; margin-top: 4px; opacity: 0.9;">Ubicación central cerca de feria</div>
+                        <div style="font-size: 0.85em; margin-top: 4px; opacity: 0.9;">Central location near the fair</div>
                     </div>
                 </div>
             </div>
@@ -635,28 +635,28 @@
                         <span class="city-emoji">🏢</span>
                         <span class="city-name">Shenzhen</span>
                     </div>
-                    <div class="city-dates">📅 18-20 Octubre (2 días)</div>
-<div class="map-links"><a href="https://www.openstreetmap.org/?mlat=22.5431&amp;mlon=114.0579#map=12/22.5431/114.0579" target="_blank" rel="noopener noreferrer">🗺️ Abrir mapa de Shenzhen</a><span>Marcador del centro de la ciudad; no del hotel o recinto.</span></div>
+                    <div class="city-dates">📅 October 18–20 (2 days)</div>
+<div class="map-links"><a href="https://www.openstreetmap.org/?mlat=22.5431&amp;mlon=114.0579#map=12/22.5431/114.0579" target="_blank" rel="noopener noreferrer">🗺️ Open Shenzhen map</a><span>City-center marker; not the hotel or venue.</span></div>
 
                     <div class="city-section">
-                        <div class="city-section-title">Actividad Principal</div>
+                        <div class="city-section-title">Main Activity</div>
                         <div class="city-section-content">
-                            <strong>Amigos de IROS</strong><br>
-                            Cámaras y Robots
+                            <strong>IROS colleagues</strong><br>
+                            Cameras and robots
                         </div>
                     </div>
 
                     <div class="city-section">
-                        <div class="city-section-title">Transporte</div>
+                        <div class="city-section-title">Transport</div>
                         <div class="city-section-content">
-                            🚆 Tren desde Guangzhou<br>
+                            🚆 Train from Guangzhou<br>
                             📍 ~180 km | 2.5 horas
                         </div>
                     </div>
 
                     <div class="city-hotel">
-                        <div class="city-hotel-name">🏨 Hotel (por confirmar)</div>
-                        <div style="font-size: 0.85em; margin-top: 4px; opacity: 0.9;">Comprobante no disponible</div>
+                        <div class="city-hotel-name">🏨 Hotel (to be confirmed)</div>
+                        <div style="font-size: 0.85em; margin-top: 4px; opacity: 0.9;">Confirmation not available</div>
                     </div>
                 </div>
             </div>
@@ -671,28 +671,28 @@
                         <span class="city-emoji">🇭🇰</span>
                         <span class="city-name">Hong Kong</span>
                     </div>
-                    <div class="city-dates">📅 20-21 Octubre (1-2 días)</div>
-<div class="map-links"><a href="https://www.openstreetmap.org/?mlat=22.3193&amp;mlon=114.1694#map=12/22.3193/114.1694" target="_blank" rel="noopener noreferrer">🗺️ Abrir mapa de Hong Kong</a><span>Marcador del centro de la ciudad; no del hotel o recinto.</span></div>
+                    <div class="city-dates">📅 October 20–21 (1–2 days)</div>
+<div class="map-links"><a href="https://www.openstreetmap.org/?mlat=22.3193&amp;mlon=114.1694#map=12/22.3193/114.1694" target="_blank" rel="noopener noreferrer">🗺️ Open Hong Kong map</a><span>City-center marker; not the hotel or venue.</span></div>
 
                     <div class="city-section">
-                        <div class="city-section-title">Actividades</div>
+                        <div class="city-section-title">Activities</div>
                         <div class="city-section-content">
-                            ⚖️ Reunión con abogado (mañana)<br>
-                            🍽️ Cena con Roy Deng
+                            ⚖️ Meeting with attorney (morning)<br>
+                            🍽️ Dinner with Roy Deng
                         </div>
                     </div>
 
                     <div class="city-section">
-                        <div class="city-section-title">Transporte</div>
+                        <div class="city-section-title">Transport</div>
                         <div class="city-section-content">
-                            🚐 Traslado desde Shenzhen<br>
+                            🚐 Transfer from Shenzhen<br>
                             📍 ~40 km | 1 hora
                         </div>
                     </div>
 
                     <div class="city-hotel">
-                        <div class="city-hotel-name">🏨 Hotel (por confirmar)</div>
-                        <div style="font-size: 0.85em; margin-top: 4px; opacity: 0.9;">Comprobante no disponible</div>
+                        <div class="city-hotel-name">🏨 Hotel (to be confirmed)</div>
+                        <div style="font-size: 0.85em; margin-top: 4px; opacity: 0.9;">Confirmation not available</div>
                     </div>
                 </div>
             </div>
@@ -707,11 +707,11 @@
                         <span class="city-emoji">🏯</span>
                         <span class="city-name">Hangzhou</span>
                     </div>
-                    <div class="city-dates">📅 21-23 Octubre (3 días)</div>
-<div class="map-links"><a href="https://www.openstreetmap.org/?mlat=30.2741&amp;mlon=120.1551#map=12/30.2741/120.1551" target="_blank" rel="noopener noreferrer">🗺️ Abrir mapa de Hangzhou</a><span>Marcador del centro de la ciudad; no del hotel o recinto.</span></div>
+                    <div class="city-dates">📅 October 21–23 (3 days)</div>
+<div class="map-links"><a href="https://www.openstreetmap.org/?mlat=30.2741&amp;mlon=120.1551#map=12/30.2741/120.1551" target="_blank" rel="noopener noreferrer">🗺️ Open Hangzhou map</a><span>City-center marker; not the hotel or venue.</span></div>
 
                     <div class="city-section">
-                        <div class="city-section-title">Actividad Principal</div>
+                        <div class="city-section-title">Main Activity</div>
                         <div class="city-section-content">
                             <strong>Global Distributor Conference</strong><br>
                             Unitree Robotics
@@ -719,16 +719,16 @@
                     </div>
 
                     <div class="city-section">
-                        <div class="city-section-title">Transporte</div>
+                        <div class="city-section-title">Transport</div>
                         <div class="city-section-content">
-                            ✈️ Vuelo desde Hong Kong<br>
+                            ✈️ Flight from Hong Kong<br>
                             📍 ~1,000 km | 2 horas
                         </div>
                     </div>
 
                     <div class="city-hotel">
                         <div class="city-hotel-name">🏨 The Azure Qiantang</div>
-                        <div style="font-size: 0.85em; margin-top: 4px; opacity: 0.9;">Salida 23 oct 5:00 PM</div>
+                        <div style="font-size: 0.85em; margin-top: 4px; opacity: 0.9;">Departure on October 23 at 5:00 PM</div>
                     </div>
                 </div>
             </div>
@@ -736,90 +736,90 @@
 
         <!-- RESUMEN DE RUTA -->
         <div class="route-summary">
-            <h2>📍 Cronología Completa del Viaje</h2>
+            <h2>📍 Complete Trip Timeline</h2>
             <div class="route-list">
                 <div class="route-item">
                     <div class="route-icon">✈️</div>
                     <div class="route-info">
-                        <div class="route-name">Lunes 12 Oct: Llegada a Shanghái</div>
-                        <div class="route-details">Vuelo internacional → Aloft Shanghai Hongqiao</div>
+                        <div class="route-name">Monday, October 12: Arrival in Shanghai</div>
+                        <div class="route-details">International flight → Aloft Shanghai Hongqiao</div>
                     </div>
                 </div>
                 <div class="route-item">
                     <div class="route-icon">🤖</div>
                     <div class="route-info">
-                        <div class="route-name">Martes 14 Oct: CIIF 2026 - Robot Show</div>
-                        <div class="route-details">Shanghái | Asistencia desde 9:00 AM</div>
+                        <div class="route-name">Wednesday, October 14: CIIF 2026 - Robot Show</div>
+                        <div class="route-details">Shanghai | Attendance from 9:00 AM</div>
                     </div>
                 </div>
                 <div class="route-item nvidia">
                     <div class="route-icon">🎯</div>
                     <div class="route-info">
-                        <div class="route-name">Miércoles 15 Oct: NVIDIA Startup Showcase</div>
-                        <div class="route-details">Suzhou | 9:30-18:00 CST | Golden Rooster Lake Conference Center</div>
+                        <div class="route-name">Thursday, October 15: NVIDIA Startup Showcase</div>
+                        <div class="route-details">Suzhou | 9:30 AM–6:00 PM CST | Golden Rooster Lake Conference Center</div>
                     </div>
                 </div>
                 <div class="route-item nvidia">
                     <div class="route-icon">✈️</div>
                     <div class="route-info">
-                        <div class="route-name">Miércoles 15 Oct (tarde): Shanghái → Guangzhou</div>
-                        <div class="route-details">1,200 km | Vuelo 2.5h | Fairfield Guangzhou</div>
+                        <div class="route-name">Thursday, October 15 (afternoon): Shanghai → Guangzhou</div>
+                        <div class="route-details">1,200 km | 2.5-hour flight | Fairfield Guangzhou</div>
                     </div>
                 </div>
                 <div class="route-item">
                     <div class="route-icon">🎪</div>
                     <div class="route-info">
-                        <div class="route-name">Jueves 16 Oct - Sábado 18 Oct: Canton Fair</div>
-                        <div class="route-details">Guangzhou | Feria comercial internacional</div>
+                        <div class="route-name">Friday, October 16–Sunday, October 18: Canton Fair</div>
+                        <div class="route-details">Guangzhou | International trade fair</div>
                     </div>
                 </div>
                 <div class="route-item">
                     <div class="route-icon">🚆</div>
                     <div class="route-info">
-                        <div class="route-name">Domingo 18 Oct: Guangzhou → Shenzhen</div>
-                        <div class="route-details">180 km | Tren 2.5h | Hotel a confirmar</div>
+                        <div class="route-name">Sunday, October 18: Guangzhou → Shenzhen</div>
+                        <div class="route-details">180 km | 2.5-hour train ride | Hotel to be confirmed</div>
                     </div>
                 </div>
                 <div class="route-item">
                     <div class="route-icon">📸</div>
                     <div class="route-info">
-                        <div class="route-name">Lunes 19 Oct - Martes 20 Oct: Amigos de IROS</div>
-                        <div class="route-details">Shenzhen | Cámaras y Robots</div>
+                        <div class="route-name">Monday 19 Oct - Tuesday 20 Oct: IROS colleagues</div>
+                        <div class="route-details">Shenzhen | Cameras and robots</div>
                     </div>
                 </div>
                 <div class="route-item">
                     <div class="route-icon">🚐</div>
                     <div class="route-info">
-                        <div class="route-name">Martes 20 Oct: Shenzhen → Hong Kong</div>
-                        <div class="route-details">40 km | Transporte 1h | Hotel a confirmar</div>
+                        <div class="route-name">Tuesday, October 20: Shenzhen → Hong Kong</div>
+                        <div class="route-details">40 km | Transport 1h | Hotel to be confirmed</div>
                     </div>
                 </div>
                 <div class="route-item">
                     <div class="route-icon">⚖️</div>
                     <div class="route-info">
-                        <div class="route-name">Miércoles 21 Oct (mañana): Reunión con abogado</div>
+                        <div class="route-name">Wednesday, October 21 (morning): Meeting with attorney</div>
                         <div class="route-details">Hong Kong</div>
                     </div>
                 </div>
                 <div class="route-item">
                     <div class="route-icon">✈️</div>
                     <div class="route-info">
-                        <div class="route-name">Miércoles 21 Oct (tarde): Hong Kong → Hangzhou</div>
-                        <div class="route-details">1,000 km | Vuelo 2h | The Azure Qiantang</div>
+                        <div class="route-name">Wednesday, October 21 (afternoon): Hong Kong → Hangzhou</div>
+                        <div class="route-details">1,000 km | 2-hour flight | The Azure Qiantang</div>
                     </div>
                 </div>
                 <div class="route-item">
                     <div class="route-icon">🤝</div>
                     <div class="route-info">
-                        <div class="route-name">Jueves 22 Oct - Viernes 23 Oct: Global Distributor Conference</div>
+                        <div class="route-name">Thursday, October 22–Friday, October 23: Global Distributor Conference</div>
                         <div class="route-details">Hangzhou | Unitree Robotics</div>
                     </div>
                 </div>
                 <div class="route-item">
                     <div class="route-icon">🏠</div>
                     <div class="route-info">
-                        <div class="route-name">Viernes 23 Oct: Regreso a casa</div>
-                        <div class="route-details">Salida desde The Azure Qiantang 5:00 PM</div>
+                        <div class="route-name">Friday, October 23: Return home</div>
+                        <div class="route-details">Departure from The Azure Qiantang at 5:00 PM</div>
                     </div>
                 </div>
             </div>
@@ -828,12 +828,12 @@
     </div>
 
     <div class="footer">
-        <p>Viaje China 2026 + NVIDIA Startup Showcase | Itinerario de 12-23 Octubre | 6 Ciudades Principales</p>
-        <p style="margin-top: 10px; font-size: 0.85em;">Mapas © OpenStreetMap contributors • Los mapas requieren conexión a Internet • Si un mapa no carga, utiliza “Abrir mapa”.</p>
+        <p>China Trip 2026 + NVIDIA Startup Showcase | Itinerary de October 12–23 | 6 Cities Major</p>
+        <p style="margin-top: 10px; font-size: 0.85em;">Maps © OpenStreetMap contributors • Maps require an internet connection • If a map does not load, use “Open map”.</p>
     </div>
 
     <script>
-        // Animación de cards al cargar
+        // Animate cards on load
         document.addEventListener('DOMContentLoaded', function() {
             const cards = document.querySelectorAll('.city-card');
             cards.forEach((card, index) => {
@@ -847,7 +847,7 @@
             });
         });
 
-        // Agregar funcionalidad de impresión amigable
+        // Add print-friendly functionality
         function printPage() {
             window.print();
         }
